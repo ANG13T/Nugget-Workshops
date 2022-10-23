@@ -34,9 +34,9 @@ while True:
     #rainbow_comet.animate()
     #sparkle_pulse.animate()
     #rainbow.animate()
-    colorcycle.animate()
+    #colorcycle.animate()
     
     #String together animations
-
+    animations.animate()
 
     
