@@ -6,6 +6,7 @@ from adafruit_led_animation.animation.blink import Blink
 from adafruit_led_animation.animation.rainbow import Rainbow
 from adafruit_led_animation.animation.rainbowchase import RainbowChase
 from adafruit_led_animation.animation.rainbowcomet import RainbowComet
+from adafruit_led_animation.animation.colorcycle import ColorCycle
 
 from adafruit_led_animation.sequence import AnimationSequence
 
@@ -22,9 +23,10 @@ sparkle_pulse = SparklePulse(pixels, speed=0.05, period=3, color=JADE)
 rainbow = Rainbow(pixels, speed=0.1, period=2)
 rainbow_chase = RainbowChase(pixels, speed=0.1, size=5, spacing=3, step=50)
 rainbow_comet = RainbowComet(pixels, speed=0.1, tail_length=7, bounce=True)
+colorcycle = ColorCycle(pixels, 0.5, colors=[MAGENTA, ORANGE, TEAL])
 
 animations = AnimationSequence(
-    rainbow_comet, rainbow_chase,sparkle_pulse, advance_interval=5, auto_clear=True, random_order=True
+    rainbow_comet, rainbow_chase,sparkle_pulse, colorcycle, advance_interval=5, auto_clear=True, random_order=True
 )
 
 while True:
@@ -32,8 +34,9 @@ while True:
     #rainbow_comet.animate()
     #sparkle_pulse.animate()
     #rainbow.animate()
+    colorcycle.animate()
     
     #String together animations
-    animations.animate()
+
 
     
