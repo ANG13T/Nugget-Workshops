@@ -176,7 +176,7 @@ def get_packet():
             fd = parse_header(fd, received[wifi.Packet.RAW])
         if PARSE_BODY:
             fd = parse_body(fd, received[wifi.Packet.RAW])
-        print("CH:{} RSSI:{} TYPE:{} SSID:{}".format(fd["ch"],fd["rssi"],fd["subtname"],fd["ssid"]))
+        print("CH:{} RSSI:{} TYPE:{} SRC:{} DST:{}".format(fd["ch"],fd["rssi"],fd["subtname"],fd["a2"],fd["a1"]))
     return fd
 
 print("-"*49)
