@@ -28,7 +28,7 @@ display = adafruit_displayio_sh1106.SH1106(display_bus, width=WIDTH, height=HEIG
 
 pixel_pin = board.IO12    # Specify the pin that the neopixel is connected to (GPIO 12)
 num_pixels = 1  # Set number of neopixels
-pixel = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.01)   # Create neopixel and set brightness to 30%
+pixel = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.6)   # Create neopixel and set brightness to 30%
 
 def SetAll(color):   # Define function with one input (color we want to set)
     for i in range(0, num_pixels):   # Addressing all 11 neopixels in a loop
@@ -43,11 +43,11 @@ def NugEyes(IMAGE):
 
 def DeauthCheck(newPacket):    
     if subt_names[fd["subt"]] == "Deauthentication":
-        NugEyes("/faces/boingo.bmp")
-        SetAll([255,0,0])
+        NugEyes("/faces/spooky-nugg-inv.bmp")
+        SetAll([159, 43, 104])
     else:
-        NugEyes("/faces/goofnug.bmp")
-        SetAll([0,255,0])
+        NugEyes("/faces/jack-o-nugg-left-inv.bmp")
+        SetAll([255,127,0])
 
 PARSE_HEADER = True
 PARSE_BODY = True  # if True, PARSE_HEADER must be True
